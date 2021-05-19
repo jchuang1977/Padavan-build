@@ -92,7 +92,7 @@ jobs:
         #########################################################################################
         sudo ./clear_tree
         mkdir -p user/htop
-        https://github.com/htop-dev/htop/archive/refs/tags/3.0.2.tar.gz -O user/htop/htop-3.0.2.tar.gz        
+        wget https://github.com/htop-dev/htop/archive/refs/tags/3.0.2.tar.gz -O user/htop/htop-3.0.2.tar.gz        
         sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
     - name : Upload packages
