@@ -27,7 +27,6 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       run: |
-        #git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
         git clone --depth=1 https://github.com/jchuang1977/rt-n56u.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
@@ -90,8 +89,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_IFB=y" >> .config ## Include IFB module for shapers. ~0.03MB
         echo "CONFIG_FIRMWARE_INCLUDE_IPSET=y" >> .config ## Include IPSet utility and kernel modules. ~0.4MB
         echo "CONFIG_FIRMWARE_INCLUDE_FTPD=y" >> .config ## Include FTP server. ~0.2MB
-	echo "CONFIG_FIRMWARE_ENABLE_UFSD=y" >> .config
-        echi "CONFIG_FIRMWARE_INCLUDE_HTOP=y" >> .config
+        echo "CONFIG_FIRMWARE_ENABLE_UFSD=y" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_HTOP=y" >> .config
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
